@@ -1,59 +1,41 @@
-const setupPara = document.getElementById("setup");
-const punchlinePara = document.getElementById("punchline");
-const punchlineBtn = document.getElementById("punchline-btn");
+const randomWordPara = document.getElementById("random-word");
 
-// fetch("https://official-joke-api.appspot.com/jokes/programming/ten")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     setupPara.textContent = data[0].setup;
+function getRandomWord() {
+  const apiUrl = "https://random-word-api.herokuapp.com/word";
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      if (response.status === 200) {
+        const randomWord = response.data;
+        const wordLength = getLengthOfWord(randomWord);
 
-//     console.log(data);
-
-//     punchlineBtn.addEventListener("click", () => {
-//       punchlinePara.textContent = data[0].punchline;
-//     });
-//   });
-
-axios
-  .get("https://official-joke-api.appspot.com/jokes/programming/ten")
-  .then((response) => {
-    console.log(response);
-    if (response.status === 200) {
-      console.log(response.status);
-      const punchline = response.data[0].punchline;
-
-      setupPara.textContent = response.data[0].setup;
-
-      console.log(response.data);
-
-      punchlineBtn.addEventListener("click", () => {
-        punchlinePara.textContent = response.data[0].punchline;
-      });
-    }
-  })
-  .catch((error) => {
-    console.log(`Error ${error.status}`);
-  });
-
-const setupOne = document.getElementById("setup-1");
-const setupBtn = document.getElementById("setup-btn");
-
-setupBtn.addEventListener("click", showSetup);
-
-function getJokes() {
-  // gets jokes from the API
-  const apiUrl = "https://official-joke-api.appspot.com/jokes/programming/ten";
-  axios.get(apiUrl).then(showSetup);
+        displayWorld(randomWord);
+        drawLetterBox(wordLength);
+      }
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
-function showSetup(response) {
-  // button which generates random setups from API
-
-  setupOne.textContent = response.data[0].setup;
+function displayWorld(world) {
+  randomWordPara.textContent = world;
 }
 
-function displayAnswer() {
-  //button which generate the answer based on the API
+function getLengthOfWord(word) {
+  return word.toString().length;
 }
 
-getJokes();
+function drawLetterBox(length) {
+  const letterBoxContainerDiv = document.getElementById("letter-box-container");
+
+  for (let i = 0; i < length; i++) {
+    const div = document.createElement("div");
+    div.classList.add("letter-box");
+
+    letterBoxContainerDiv.append(div);
+    console.log(i);
+  }
+}
+
+getRandomWord();

@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.letter-box-container {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.letter-box {
+  width: 25px;
+  height: 25px;
+  background-color: coral;
+  border-radius: 5px;
+}
