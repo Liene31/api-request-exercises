@@ -1,0 +1,63 @@
+{
+  "gifts": [
+    {
+      "id": 1,
+      "name": "cat tree",
+      "lowerPrice": 30,
+      "upperPrice": 1000,
+      "reallyWanted": true,
+      "categoryId": 1,
+      "insertedDate": "2025-10-20"
+    },
+    {
+      "id": 2,
+      "name": "hat",
+      "lowerPrice": 10,
+      "upperPrice": 50,
+      "reallyWanted": false,
+      "categoryId": 3,
+      "insertedDate": "2025-10-21"
+    },
+    {
+      "id": 3,
+      "name": "Scrabble",
+      "lowerPrice": 7,
+      "upperPrice": 15,
+      "reallyWanted": true,
+      "categoryId": 2,
+      "insertedDate": "2025-10-19"
+    },
+    {
+      "id": 4,
+      "name": "T-Shirt",
+      "lowerPrice": 10,
+      "upperPrice": 20,
+      "reallyWanted": false,
+      "categoryId": 3,
+      "insertedDate": "2025-10-19"
+    },
+    {
+      "id": 5,
+      "name": "Table",
+      "lowerPrice": 100,
+      "upperPrice": 300,
+      "reallyWanted": false,
+      "categoryId": 1,
+      "insertedDate": "2025-10-18"
+    },
+    {
+      "id": 6,
+      "name": "Jeans",
+      "lowerPrice": 30,
+      "upperPrice": 35,
+      "reallyWanted": false,
+      "categoryId": 3,
+      "insertedDate": "2025-10-23"
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "home" },
+    { "id": 2, "name": "games" },
+    { "id": 3, "name": "mode" }
+  ]
+}

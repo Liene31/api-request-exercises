@@ -34,7 +34,6 @@ function drawLetterBox(length) {
     div.classList.add("letter-box");
 
     letterBoxContainerDiv.append(div);
-    console.log(i);
   }
 }
 
